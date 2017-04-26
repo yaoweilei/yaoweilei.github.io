@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Yaoweilei&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="CreateLoadBalancerDescriptionロードバランサーを作成します。ロードバランサーの作成に成功した場合、ユニークなDNS名を通知します。アカウントが属するプロジェクト単位で最大20個のロードバランサーを作成できます。   Request Parametersすべての動作で使用する一般的なパラメタの情報に関しては、Common Parametersを参照してください。  [AW">
+<meta name="keywords">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Yaoweilei's Blog">
+<meta property="og:url" content="http://yaoweilei.com.cn/2017/04/26/create_load_balancer/index.html">
+<meta property="og:site_name" content="Yaoweilei's Blog">
+<meta property="og:description" content="CreateLoadBalancerDescriptionロードバランサーを作成します。ロードバランサーの作成に成功した場合、ユニークなDNS名を通知します。アカウントが属するプロジェクト単位で最大20個のロードバランサーを作成できます。   Request Parametersすべての動作で使用する一般的なパラメタの情報に関しては、Common Parametersを参照してください。  [AW">
+<meta property="og:updated_time" content="2017-04-26T06:04:51.344Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Yaoweilei's Blog">
+<meta name="twitter:description" content="CreateLoadBalancerDescriptionロードバランサーを作成します。ロードバランサーの作成に成功した場合、ユニークなDNS名を通知します。アカウントが属するプロジェクト単位で最大20個のロードバランサーを作成できます。   Request Parametersすべての動作で使用する一般的なパラメタの情報に関しては、Common Parametersを参照してください。  [AW">
+  
+    <link rel="alternate" href="/atom.xml" title="Yaoweilei&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Yaoweilei&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Record for Self</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yaoweilei.com.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-create_load_balancer" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/26/create_load_balancer/" class="article-date">
+  <time datetime="2017-04-26T06:04:51.344Z" itemprop="datePublished">2017-04-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="CreateLoadBalancer"><a href="#CreateLoadBalancer" class="headerlink" title="CreateLoadBalancer"></a>CreateLoadBalancer</h1><h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>ロードバランサーを作成します。<br>ロードバランサーの作成に成功した場合、ユニークなDNS名を通知します。<br>アカウントが属するプロジェクト単位で最大20個のロードバランサーを作成できます。  </p>
+<h2 id="Request-Parameters"><a href="#Request-Parameters" class="headerlink" title="Request Parameters"></a>Request Parameters</h2><p>すべての動作で使用する一般的なパラメタの情報に関しては、<a href="../common/common_parameters.md">Common Parameters</a>を参照してください。</p>
+<ul>
+<li><p>[AWS only]<code>AvailabilityZones.member.N</code></p>
+<p>AvailabilityZoneのリスト。<br>少なくとも1つのAvailabilityZoneを指定する必要があります。<br>同じRegion内にあるAvailabilityZoneのみ指定できます。<br>トラフィックは全てのAvailabilityZoneをまたがって均等に振り分けられます。 </p>
+<ul>
+<li>Type: String list</li>
+<li>Required: No</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><code>Listeners.member.N</code></p>
+<p>LoadBalancerPort, InstancePort, Protocolを含むリスナーのリスト。</p>
+<ul>
+<li>Type: <a href="../type/listener.md">Listener</a> list</li>
+<li>Required: Yes</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><code>LoadBalancerName</code></p>
+<p>ロードバランサーの名前。<br>名前はあなたのアカウントが属するプロジェクト内のロードバランサーの中で一意にする必要があります。<br>[CPF only]ロードバランサーの名前は30文字まで指定できます。<br>[CPF only]ロードバランサーの名前には英数字と”-“(ハイフン)が指定できます。</p>
+<ul>
+<li>Type: String</li>
+<li>Required: Yes</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>[AWS only]<code>Scheme</code></p>
+<p>ロードバランサーのタイプ。</p>
+<ul>
+<li>Type: String</li>
+<li>Required: No</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>[CPF only]<code>Scheme</code></p>
+<p>ロードバランサーのタイプ。</p>
+<ul>
+<li>Type: String</li>
+<li>Default: public</li>
+<li>Valid values: public | internal</li>
+<li>Required: No</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><code>SecurityGroups.member.N</code></p>
+<p>セキュリティグループIDのリスト。<br>指定しない場合、ユーザーのプロジェクトのデフォルトセキュリティグループが設定されます。</p>
+<ul>
+<li>Type: String list</li>
+<li>Required: No</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>[AWS only]<code>Subnets.member.N</code></p>
+<p>サブネットIDのリスト。</p>
+<ul>
+<li>Type: String list</li>
+<li>Required: No</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>[CPF only]<code>Subnets.member.N</code></p>
+<p>サブネットIDのリスト。<br>以下の場合、登録する分散先インスタンスと同一のサブネットを指定してください。<br>  ・オートスケール（AutoScaling)によるVMインスタンスのヘルスチェック機能を使用する場合<br>  ・監視サービスで、ロードバランサーの監視項目を監視する場合    </p>
+<ul>
+<li>Type: String list</li>
+<li>Required: Yes</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>[CPF only]<code>Grade</code></p>
+<p>ロードバランサーのグレード(性能のタイプ）。<br>通常版ELB(Standard)、中間性能版ELB(Middle)、高性能版ELB(High)または、オートスケール(Auto)を選択する。<br>オートスケール(Auto)を選択した場合、負荷に応じて自動で性能が変化します。   </p>
+<ul>
+<li>Type: String</li>
+<li>Default: Standard</li>
+<li>Valid values: Standard | Middle | High | Auto</li>
+<li>Required: No</li>
+</ul>
+</li>
+</ul>
+<h2 id="Response"><a href="#Response" class="headerlink" title="Response"></a>Response</h2><p>以下のステータスコードを返却します。</p>
+<ul>
+<li><p><code>Normal response code</code></p>
+<p>本動作は正常に受け付けられました。</p>
+<ul>
+<li>HTTP Status Code: 200</li>
+</ul>
+</li>
+</ul>
+<h2 id="Response-Elements"><a href="#Response-Elements" class="headerlink" title="Response Elements"></a>Response Elements</h2><p>CreateLoadBalancerResultいう構造体で、以下の要素を返却します。</p>
+<ul>
+<li><p><code>DNSName</code></p>
+<p>ロードバランサーのDNS名。</p>
+<ul>
+<li>Type: String</li>
+</ul>
+</li>
+</ul>
+<h2 id="Errors"><a href="#Errors" class="headerlink" title="Errors"></a>Errors</h2><p>すべての動作に共通のエラー情報に関しては、<a href="../common/common_errors.md">Common Errors</a>を参照してください。</p>
+<ul>
+<li><p><code>CertificateNotFound</code></p>
+<p>The specified SSL ID does not refer to a valid SSL certificate in the Key Management Service. </p>
+<ul>
+<li>HTTP Status Code: 400</li>
+</ul>
+<p><strong>Note</strong><br>[CPF only]<br>α版では本エラーは発生しません。  </p>
+</li>
+<li><p><code>DuplicateAccessPointName</code></p>
+<p>Load balancer name already exists for this account. Please choose another name. </p>
+<ul>
+<li>HTTP Status Code: 400</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><code>InvalidConfigurationRequest</code></p>
+<p>Requested configuration change is invalid. </p>
+<ul>
+<li>HTTP Status Code: 409</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><code>InvalidScheme</code></p>
+<p>Invalid value for scheme. Scheme can only be specified for load balancers in the Virtual system. </p>
+<ul>
+<li>HTTP Status Code: 400</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><code>InvalidSecurityGroup</code></p>
+<p>One or more specified security groups do not exist. </p>
+<ul>
+<li>HTTP Status Code: 400</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><code>InvalidSubnet</code></p>
+<p>The Virtual system has no Internet gateway. </p>
+<ul>
+<li>HTTP Status Code: 400</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><code>SubnetNotFound</code></p>
+<p>One or more subnets were not found. </p>
+<ul>
+<li>HTTP Status Code: 400</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><code>TooManyAccessPoints</code></p>
+<p>The quota for the number of load balancers has already been reached. </p>
+<ul>
+<li>HTTP Status Code: 400</li>
+</ul>
+</li>
+</ul>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><h3 id="Sample-Request"><a href="#Sample-Request" class="headerlink" title="Sample Request"></a>Sample Request</h3><p>この例では、ロードバランサー名が <em>MyLB01</em>のロードバランサーを作成し、<br>フロントエンド接続とバックエンド接続のポート番号/プロトコルが80/httpの<br>リスナーを作成します。</p>
+<pre><code>https://loadbalancing.(リージョン名).cloud.global.fujitsu.com/?LoadBalancerName=MyLB01
+&amp;Listeners.member.1.LoadBalancerPort=80
+&amp;Listeners.member.1.InstancePort=80
+&amp;Listeners.member.1.Protocol=http
+&amp;Listeners.member.1.InstanceProtocol=http
+&amp;Scheme=internal
+&amp;Subnets.member.1=subnet-3561b05d
+&amp;Version=2014-11-01
+&amp;Action=CreateLoadBalancer
+</code></pre><h3 id="Sample-Response-XML"><a href="#Sample-Response-XML" class="headerlink" title="Sample Response (XML)"></a>Sample Response (XML)</h3><pre><code>&lt;CreateLoadBalancerResponse xmlns=&quot;http://docs.cloudcommunity.global.fujitsu.com/loadbalancing/api/v1.0&quot;&gt;
+  &lt;CreateLoadBalancerResult&gt;
+    &lt;DNSName&gt;MyLB01-3b9c2b0f028f40e09d6306887646c28b.elb.tps5.fujitsu.com&lt;/DNSName&gt;
+  &lt;/CreateLoadBalancerResult&gt;
+  &lt;ResponseMetadata&gt;
+    &lt;RequestId&gt;1549581b-12b7-11e3-895e-1334aEXAMPLE&lt;/RequestId&gt;
+  &lt;/ResponseMetadata&gt;
+&lt;/CreateLoadBalancerResponse&gt;
+</code></pre><h3 id="Sample-Response-JSON"><a href="#Sample-Response-JSON" class="headerlink" title="Sample Response (JSON)"></a>Sample Response (JSON)</h3><pre><code>{
+  &quot;CreateLoadBalancerResponse&quot;: {
+    &quot;CreateLoadBalancerResult&quot;: {
+      &quot;DNSName&quot;: &quot;MyLB01-3b9c2b0f028f40e09d6306887646c28b.elb.tps5.fujitsu.com&quot;
+    },
+    &quot;ResponseMetadata&quot;: {
+      &quot;RequestId&quot;: &quot;1549581b-12b7-11e3-895e-1334aEXAMPLE&quot;
+    }
+  }
+}
+</code></pre><p><a href="../index.md">Go Top</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yaoweilei.com.cn/2017/04/26/create_load_balancer/" data-id="cj1ykt4oq0004676afucehtie" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/04/26/create_lbcookie_stickiness_policy/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/04/26/create_load_balancer/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/26/create_lbcookie_stickiness_policy/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/26/configure_health_check/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/26/attach_load_balancer_to_subnets/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/26/apply_security_group_to_load_balancer/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Yaoweilei<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
