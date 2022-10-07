@@ -16,6 +16,10 @@
                         hreflang="en"
                         href="https://yaoweilei.github.io/categories/"
                         /><xhtml:link
+                        rel="alternate"
+                        hreflang="jp"
+                        href="https://yaoweilei.github.io/jp/categories/"
+                        /><xhtml:link
                     rel="alternate"
                     hreflang="zh-cn"
                     href="https://yaoweilei.github.io/zh-cn/categories/"
@@ -25,6 +29,10 @@
                         hreflang="en"
                         href="https://yaoweilei.github.io/tags/"
                         /><xhtml:link
+                        rel="alternate"
+                        hreflang="jp"
+                        href="https://yaoweilei.github.io/jp/tags/"
+                        /><xhtml:link
                     rel="alternate"
                     hreflang="zh-cn"
                     href="https://yaoweilei.github.io/zh-cn/tags/"
@@ -33,6 +41,10 @@
                         rel="alternate"
                         hreflang="en"
                         href="https://yaoweilei.github.io/"
+                        /><xhtml:link
+                        rel="alternate"
+                        hreflang="jp"
+                        href="https://yaoweilei.github.io/jp/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="zh-cn"
